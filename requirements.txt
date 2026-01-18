@@ -1,0 +1,11 @@
+librosa
+numpy
+pandas
+scikit-learn
+matplotlib
+soundfile
+soxr
+joblib
+tqdm
+pyarrow
+
