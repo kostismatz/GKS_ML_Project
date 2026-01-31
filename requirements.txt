@@ -1,11 +1,16 @@
 librosa
 numpy
 pandas
+scipy
 scikit-learn
+xgboost
 matplotlib
+seaborn
 soundfile
 soxr
 joblib
 tqdm
 pyarrow
+jupyter
+ipykernel
 

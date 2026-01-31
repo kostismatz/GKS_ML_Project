@@ -22,13 +22,13 @@ Thumbs.db
 # Jupyter
 .ipynb_checkpoints/
 
-# Project outputs
-outputs/
-models/
-
 # Data
 data/raw/
 data/processed/
+
+results/figures/
+results/metrics/
+results/models
 
 # Logs
 *.log
