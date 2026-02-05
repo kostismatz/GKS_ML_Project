@@ -36,6 +36,8 @@ class Config:
     NUM_FOLDS = 10
     NUM_CLASSES = 10
 
+    TEST_FOLD = 10
+
     CLASS_NAMES = [
         'air_conditioner',
         'car_horn',
