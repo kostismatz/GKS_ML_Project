@@ -20,7 +20,7 @@ class Config:
     TARGET_SR = 16000
     DURATION = 4.0
 
-    N_MFCC = 40  # Number of MFCCs
+    N_MFCC = 13  # Number of MFCCs
     N_FFT = 2048  # FFT window size
     HOP_LENGTH = 512  # Number of samples between successive frames
     N_MELS = 128  # Number of mel bands

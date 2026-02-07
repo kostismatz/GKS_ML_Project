@@ -12,7 +12,7 @@ then
     mkdir -p ./fixed/fold7
     mkdir -p ./fixed/fold8
     mkdir -p ./fixed/fold9
-    mkdir -p ./fixed/fold10
+    mkdir -p ./fixed/fold10 #kjlh
     echo "done"
 fi
 

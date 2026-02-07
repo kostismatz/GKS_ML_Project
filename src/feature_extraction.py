@@ -97,7 +97,8 @@ class FeatureExtractor:
             n_fft=self.config.N_FFT,
             hop_length=self.config.HOP_LENGTH
         )
-        features.extend([np.mean(contrast), np.std(contrast)])
+        features.extend(np.mean(contrast, axis=1).tolist())
+        features.extend(np.std(contrast, axis=1).tolist())
 
         return np.array(features, dtype=np.float32)
 
