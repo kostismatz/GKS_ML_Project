@@ -146,7 +146,50 @@ This matches the [UrbanSound8K evaluation guidelines](https://urbansounddataset.
 
 ## 5. Project Structure
 
+```
+GKS_ML_Project/
+├── config/
+│   ├── __init__.py
+│   └── config.py              # Paths, hyperparameters, class names
+├── src/
+│   ├── __init__.py
+│   ├── data_loader.py         # Metadata loading, fold splits, audio paths
+│   ├── pre_processing.py      # Resampling, normalization, length fixing
+│   ├── feature_extraction.py  # MFCCs, spectral features, deltas
+│   ├── models.py              # Model definitions (ModelFactory)
+│   ├── train.py               # Training pipeline (optional entry point)
+│   ├── evaluate.py            # Metrics, confusion matrix, classification report
+│   └── cache_manager.py       # Feature caching by feature_set
+├── notebooks/
+│   ├── 01_data_exploration.ipynb   # EDA, metadata analysis
+│   ├── 02_feature_engineering.ipynb # Feature design and exploration
+│   ├── 03_compliant_training.ipynb  # 10-fold CV (UrbanSound8K compliant)
+│   ├── 04_all_models_training.ipynb # Random split + validation comparison
+│   └── ml_machine_learning.ipynb   # Alternative pipeline reference
+├── data/                      # (Place UrbanSound8K here)
+│   └── raw/urbansound8k/
+│       ├── fold1/ ... fold10/
+│       └── UrbanSound8K.csv
+├── Utilities/
+│   ├── BatchWavResampling.sh  # Audio resampling scripts
+│   ├── BatchWavResampling.ps1
+│   └── Urban+Sound+Classification+for+Audio+Analysis+Using+Long+Short-Term+Memory.pdf
+├── main.py                    # Entry point (currenty not implemented)
+├── requirements.txt
+└── README.md
+```
 
+### Key Modules
+
+| Module | Purpose |
+|--------|---------|
+| `config/config.py` | Central configuration: paths, sample rate, duration, feature params, model settings |
+| `src/data_loader.py` | Load UrbanSound8K metadata, provide fold-based splits and audio paths |
+| `src/pre_processing.py` | Load audio, resample to 16 kHz, normalize amplitude, fix length to 4 s |
+| `src/feature_extraction.py` | Extract baseline (46) or xgb (100) features per clip |
+| `src/models.py` | ModelFactory for Logistic Regression, Random Forest, XGBoost, SVM, MLP |
+| `src/evaluate.py` | Compute accuracy, precision, recall, F1; plot confusion matrices and reports |
+| `src/cache_manager.py` | Cache extracted features on disk to avoid recomputation |
 
 ---
 
