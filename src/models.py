@@ -3,7 +3,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
-from xgboost import XGBClassifier
+from xgboost import XGBClassifier #needs pip install!
+from sklearn.naive_bayes import GaussianNB
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis,   QuadraticDiscriminantAnalysis
+from sklearn.tree import DecisionTreeClassifier
 
 from config.config import Config
 
@@ -22,7 +25,13 @@ class ModelFactory:
             "logistic_regression": self.get_logistic_regression(),
             "gradient_boosting": self.get_gradient_boosting(),
             "xgboost": self.get_xgboost(),
-            "mlp": self.get_mlp()
+            "mlp": self.get_mlp(),
+
+            #metafermena apo tou kwsti
+            "gaussian_nb": self.get_gaussianNB(),
+            "lda": self.get_lda(),
+            "decision_tree": self.get_decision_tree(),
+            "qda": self.get_qda()
         }
 
         if model_name not in models:
@@ -90,6 +99,28 @@ class ModelFactory:
             random_state=self.config.RANDOM_STATE
         )
 
+    def get_gaussianNB(self):
+        return GaussianNB()
+
+    def get_lda(self):
+        return LinearDiscriminantAnalysis(
+            solver="svd",
+            tol=0.0001
+        )
+    
+    def get_decision_tree(self):
+        return DecisionTreeClassifier(
+            criterion="gini",
+            min_samples_leaf=1,
+            min_samples_split=2
+        )
+
+    def get_qda(self):
+        return QuadraticDiscriminantAnalysis(
+            store_covariance=False,
+            tol=0.0001
+        )
+
     def get_all_models(self):
 
         return {
@@ -99,5 +130,9 @@ class ModelFactory:
             "logistic_regression": self.get_logistic_regression(),
             "gradient_boosting": self.get_gradient_boosting(),
             "xgboost": self.get_xgboost(),
-            "mlp": self.get_mlp()
+            "mlp": self.get_mlp(),
+            "gaussian_nb": self.get_gaussianNB(),
+            "lda": self.get_lda(),
+            "decision_tree": self.get_decision_tree(),
+            "qda": self.get_qda()
         }
