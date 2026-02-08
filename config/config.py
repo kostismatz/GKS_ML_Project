@@ -31,7 +31,7 @@ class Config:
 
     RANDOM_STATE = 42
     TEST_SIZE = 0.2
-    CV_FOLDS = 5
+    CV_FOLDS = 10
 
     NUM_FOLDS = 10
     NUM_CLASSES = 10

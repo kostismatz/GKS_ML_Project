@@ -21,17 +21,15 @@ class ModelFactory:
         models = {
             "svm": self.get_svm(),
             "random_forest": self.get_random_forest(),
-            "knn": self.get_knn(),
+            #"knn": self.get_knn(),
             "logistic_regression": self.get_logistic_regression(),
-            "gradient_boosting": self.get_gradient_boosting(),
+            #"gradient_boosting": self.get_gradient_boosting(),
             "xgboost": self.get_xgboost(),
             "mlp": self.get_mlp(),
-
-            #metafermena apo tou kwsti
-            "gaussian_nb": self.get_gaussianNB(),
-            "lda": self.get_lda(),
-            "decision_tree": self.get_decision_tree(),
-            "qda": self.get_qda()
+            #"gaussian_nb": self.get_gaussianNB(),
+            #"lda": self.get_lda(),
+            #"decision_tree": self.get_decision_tree(),
+            #"qda": self.get_qda()
         }
 
         if model_name not in models:
@@ -126,13 +124,13 @@ class ModelFactory:
         return {
             "svm": self.get_svm(),
             "random_forest": self.get_random_forest(),
-            "knn": self.get_knn(),
+            # "knn": self.get_knn(),
             "logistic_regression": self.get_logistic_regression(),
-            "gradient_boosting": self.get_gradient_boosting(),
+            # "gradient_boosting": self.get_gradient_boosting(),
             "xgboost": self.get_xgboost(),
             "mlp": self.get_mlp(),
-            "gaussian_nb": self.get_gaussianNB(),
-            "lda": self.get_lda(),
-            "decision_tree": self.get_decision_tree(),
-            "qda": self.get_qda()
+            #"gaussian_nb": self.get_gaussianNB(),
+            # "lda": self.get_lda(),
+            #"decision_tree": self.get_decision_tree(),
+            # "qda": self.get_qda()
         }
