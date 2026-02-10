@@ -21,7 +21,9 @@ Thumbs.db
 
 # Jupyter
 .ipynb_checkpoints/
-
+presentation_slides.md
+presentation.tex
+presentation_todo.md
 # Data
 data/raw/
 data/processed/
