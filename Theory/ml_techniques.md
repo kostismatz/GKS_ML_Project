@@ -53,10 +53,10 @@ The training process (`src/train.py`) follows a rigorous pipeline to ensure mode
 - **Standardization**: A `StandardScaler` is fitted on the training data to remove the mean and scale to unit variance.
 - **Importance**: This is crucial for distance-based models (KNN, SVM) and gradient-based models (MLP) to ensure all features contribute equally.
 
-### C. Validation Strategy (5-Fold Cross-Validation)
-Before the final fit, the model undergoes **5-Fold Cross-Validation** on the training set:
-- The training data is split into 5 subsets.
-- The model is trained on 4 and validated on 1, repeated 5 times.
+### C. Validation Strategy (10-Fold Cross-Validation)
+Before the final fit, the model undergoes **10-Fold Cross-Validation** on the training set:
+- The training data is split into 10 subsets.
+- The model is trained on 9 and validated on 1, repeated 10 times.
 - **Output**: A mean accuracy score with standard deviation (e.g., `Accuracy: 0.85 (+/- 0.02)`).
 - **Goal**: To estimate how well the model generalizes to unseen data and detect overfitting early.
 
