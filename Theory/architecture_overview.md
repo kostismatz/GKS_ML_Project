@@ -46,7 +46,7 @@ A rich feature set optimized for tree-based models:
 ### 3. Model Training (`src/train.py`, `src/models.py`)
 - **Model Factory**: Supports multiple architectures (SVM, Random Forest, XGBoost, etc.).
 - **Scaling**: Uses `StandardScaler` to normalize feature distributions (crucial for SVM/Neural Nets).
-- **Cross-Validation**: Performs 5-fold cross-validation during training to verify stability.
+- **Cross-Validation**: Performs 10-fold cross-validation during training to verify stability.
 - **Persistence**: Saves trained models (`.pkl`) and their corresponding scalers.
 
 ### 4. Evaluation (`src/evaluate.py`)
